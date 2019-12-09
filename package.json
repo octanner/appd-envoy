@@ -1,0 +1,24 @@
+{
+  "name": "appd-envoy",
+  "version": "1.0.0",
+  "description": "NodeJS agent for Application Dynamics to be used at O.C. Tanner",
+  "main": "appd-envoy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/octanner/appd-envoy.git"
+  },
+  "keywords": [
+    "application",
+    "dynamics",
+    "akkeris"
+  ],
+  "author": "Ned D Hanks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octanner/appd-envoy/issues"
+  },
+  "homepage": "https://github.com/octanner/appd-envoy#readme"
+}
