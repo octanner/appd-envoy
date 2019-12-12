@@ -14,6 +14,7 @@ module.exports = function(config) {
             appdDebug = false
         }
         
+        console.log("appdDebug: ", appdDebug, "\n")
         if (typeof config.nodePrefix != "undefined") {
             appdReuseNodePrefix = config.nodePrefix
         }
