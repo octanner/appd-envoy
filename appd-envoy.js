@@ -20,6 +20,11 @@ module.exports = function(config) {
         }
 
         require("appdynamics").profile({
+            controllerHostName: "octanner.saas.appdynamics.com",
+            controllerPort: 443,
+            controllerSslEnabled: true,
+            accountName: "octanner",
+            accountAccessKey: "4wl11h7n408o",
             debug: appdDebug,
             reuseNode: true,
             reuseNodePrefix: appdReuseNodePrefix,
