@@ -21,8 +21,8 @@ module.exports = function(config) {
 
         require("appdynamics").profile({
             debug: appdDebug,
-            reuseNode: false,
-            // reuseNodePrefix: appdReuseNodePrefix,
+            reuseNode: true,
+            reuseNodePrefix: appdReuseNodePrefix,
             controllerSslEnabled: true,
             dataFilters: [{
                 "appliesTo": "env-vars",
