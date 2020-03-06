@@ -15,7 +15,7 @@ module.exports = function(config) {
             appdDebug = config.debug
         }
 
-        if (appdebug) { console.log("appdDebug: ", appdDebug, "\n") }
+        if (appdDebug) { console.log("appdDebug: ", appdDebug, "\n") }
 
         const fs = require('fs')
         const os = require('os')
