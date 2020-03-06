@@ -1,6 +1,6 @@
 {
   "name": "appd-envoy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "NodeJS agent for Application Dynamics to be used at O.C. Tanner",
   "main": "appd-envoy.js",
   "scripts": {
