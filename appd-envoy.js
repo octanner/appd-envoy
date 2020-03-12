@@ -27,7 +27,7 @@ module.exports = function(config) {
 
             var nodeName = os.hostname().split(".")[0]
 
-            re = "/user|pass|key|secret|private|token|salt|auth|hash/i"
+            var re = "/user|pass|key|secret|private|token|salt|auth|hash/i"
             require("appdynamics").profile({
                 controllerHostName: process.env.OCT_VAULT_SHARED_READ_APPDYNAMICS_CONTROLLERHOSTNAME,
                 controllerPort: process.env.OCT_VAULT_SHARED_READ_APPDYNAMICS_CONTROLLERPORT,
