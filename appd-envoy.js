@@ -27,6 +27,7 @@ module.exports = function(config) {
 
             var nodeName = os.hostname().split(".")[0]
 
+            re = "/user|pass|key|secret|private|token|salt|auth|hash/i"
             require("appdynamics").profile({
                 controllerHostName: process.env.OCT_VAULT_SHARED_READ_APPDYNAMICS_CONTROLLERHOSTNAME,
                 controllerPort: process.env.OCT_VAULT_SHARED_READ_APPDYNAMICS_CONTROLLERPORT,
@@ -39,15 +40,21 @@ module.exports = function(config) {
                 debug: appdDebug,
                 reuseNode: false,
                 noNodeNameSuffix: true,
-                dataFilters: [{
-                    "appliesTo": "env-vars",
-                    "matchPattern": "/user|pass|key|secret|private|token|salt|auth|hash/i"
-                }],
+                dataFilters: [
+                    {
+                        "appliesTo": "env-vars",
+                        "matchPattern": re
+                    },
+                    {
+                        "appliesTo": "http-headers",
+                        "matchPattern": re
+                    }
+                ],
                 urlFilters: [{
                     "delimiter": "/",
                     "segment": 1,
                     "matchPattern": "/\@/",
-                    "paramPattern": "/user|pass|key|secret|private|token|salt|auth|hash/i"
+                    "paramPattern": re
                 }],
                 logging: {
                     logfiles: [{
