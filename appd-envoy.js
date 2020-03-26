@@ -28,14 +28,16 @@ module.exports = function(config) {
                 const os = require('os')
             
                 try {
-                    var cgroupLines = fs.readFileSync('/proc/self/cgroup').toString().split("\n")
-                    var containerId = cgroupLines[0].split("/")[2].substr(0,12)
+                    var containerId = fs.readFileSync('/proc/self/cgroup').toString().split("\n").sort(function (a, b) {
+                        return parseInt(a.split(":")[0]) - parseInt(b.split(":")[0])
+                    })[0].split("/")[2].substr(0, 12)
                     process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID = containerId
                     process.env.UNIQUE_HOST_ID = containerId
-
-                    console.log("[appd-envoy] APPDYNAMICS_AGENT_UNIQUE_HOST_ID:", process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID, "\n")
-                    console.log("[appd-envoy] UNIQUE_HOST_ID:", process.env.UNIQUE_HOST_ID, "\n")
-
+                    if (appdDebug) {
+                        console.log("[appd-envoy] APPDYNAMICS_AGENT_UNIQUE_HOST_ID:", containerId)
+                        console.log("[appd-envoy] APPDYNAMICS_AGENT_UNIQUE_HOST_ID:", process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID)
+                        console.log("[appd-envoy] UNIQUE_HOST_ID:", process.env.UNIQUE_HOST_ID)
+                    }
                     var nodeName = os.hostname().split(".")[0]
 
                     var re = "/user|pass|key|secret|private|token|salt|auth|hash/i"
