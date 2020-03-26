@@ -33,6 +33,9 @@ module.exports = function(config) {
                     process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID = containerId
                     process.env.UNIQUE_HOST_ID = containerId
 
+                    console.log("[appd-envoy] APPDYNAMICS_AGENT_UNIQUE_HOST_ID:", process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID, "\n")
+                    console.log("[appd-envoy] UNIQUE_HOST_ID:", process.env.UNIQUE_HOST_ID, "\n")
+
                     var nodeName = os.hostname().split(".")[0]
 
                     var re = "/user|pass|key|secret|private|token|salt|auth|hash/i"
