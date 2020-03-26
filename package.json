@@ -1,14 +1,18 @@
 {
-  "name": "appd-envoy",
+  "name": "@octanner/appd-envoy",
   "version": "1.1.3",
   "description": "NodeJS agent for Application Dynamics to be used at O.C. Tanner",
   "main": "appd-envoy.js",
   "scripts": {
+    "publish-module": "rm appd-envoy.tar.gz; tar -zcvf appd-envoy.tar.gz appd-envoy.js package.json && npm publish appd-envoy.tar.gz --scope=@octanner",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/octanner/appd-envoy.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "application",

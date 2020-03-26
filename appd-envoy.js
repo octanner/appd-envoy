@@ -31,6 +31,7 @@ module.exports = function(config) {
                     var cgroupLines = fs.readFileSync('/proc/self/cgroup').toString().split("\n")
                     var containerId = cgroupLines[0].split("/")[2].substr(0,12)
                     process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID = containerId
+                    process.env.UNIQUE_HOST_ID = containerId
 
                     var nodeName = os.hostname().split(".")[0]
 
