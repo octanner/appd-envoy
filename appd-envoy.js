@@ -34,7 +34,6 @@ module.exports = function(config) {
                     process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID = containerId
                     process.env.UNIQUE_HOST_ID = containerId
                     if (appdDebug) {
-                        console.log("[appd-envoy] APPDYNAMICS_AGENT_UNIQUE_HOST_ID:", containerId)
                         console.log("[appd-envoy] APPDYNAMICS_AGENT_UNIQUE_HOST_ID:", process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID)
                         console.log("[appd-envoy] UNIQUE_HOST_ID:", process.env.UNIQUE_HOST_ID)
                     }
