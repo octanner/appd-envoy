@@ -7,7 +7,7 @@ module.exports = function(config) {
     var appdDebug = false
     // var appdReuseNodePrefix = "droid"
 
-    if (process.env.PREVIEW_APP == "true") {
+    if (typeof process.env.PREVIEW_APP != "undefined") {
         console.log("appd-envoy: preview app, appdynamics agent not enabled")
     } else {
         if (process.env.APPDYNAMICS_AGENT_ENABLED == 'true' )
