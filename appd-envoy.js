@@ -28,9 +28,10 @@ module.exports = function(config) {
                 const os = require('os')
             
                 try {
-                    var containerId = fs.readFileSync('/proc/self/cgroup').toString().split("\n").sort(function (a, b) {
-                        return parseInt(a.split(":")[0]) - parseInt(b.split(":")[0])
-                    })[0].split("/")[2].substr(0, 12)
+                    var l = fs.readFileSync('/proc/self/cgroup').toString().split("\n").sort(function (a, b) {
+                            return parseInt(a.split(":")[0]) - parseInt(b.split(":")[0])
+                        })[0].split("/")
+                    var containerId = containerId = l[l.length - 1].substr(0, 12)
                     process.env.APPDYNAMICS_AGENT_UNIQUE_HOST_ID = containerId
                     process.env.UNIQUE_HOST_ID = containerId
                     if (appdDebug) {
