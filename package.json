@@ -1,7 +1,7 @@
 {
   "name": "@octanner/appd-envoy",
-  "version": "1.1.5",
-  "description": "NodeJS agent for Application Dynamics to be used at O.C. Tanner",
+  "version": "1.1.7",
+  "description": "Load appdynamics agent modules",
   "main": "appd-envoy.js",
   "scripts": {
     "publish-module": "rm appd-envoy.tar.gz; tar -zcvf appd-envoy.tar.gz appd-envoy.js package.json && npm publish appd-envoy.tar.gz --scope=@octanner",
@@ -11,10 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/octanner/appd-envoy.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "keywords": [
+    "monitoring",
     "application",
     "dynamics",
     "akkeris"
@@ -24,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/octanner/appd-envoy/issues"
   },
-  "homepage": "https://github.com/octanner/appd-envoy#readme"
+  "homepage": "https://github.com/octanner/appd-envoy#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }
